@@ -41,11 +41,11 @@ body {
     text-align: center;
     margin: 2%;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
 }
 
 .info-curso {
-    width: 70%;
+    width: 65%;
     padding-right: 2%;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,8 @@ body {
 }
 
 .contenedor-info-curso img {
-    width: 30%;
+    width: 35%;
+    padding-right: 5%;
 }
 
 .contenedor-info-curso {
@@ -95,7 +96,7 @@ body {
 
 .lista-evaluaciones {
     position: absolute;
-    transform: translateY(-100%);
+    transform: translateY(-101%);
     background-color: rgba(33, 69, 89, 1);
     height: 250px;
     width: 250px;
@@ -155,4 +156,16 @@ body {
 
 .info-personal p {
     color: #f2f2f2;
+}
+
+.ver-perfil-btn {
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: rgba(230, 110, 98, 1);
+    padding: 8px 10px;
+    border-radius: 50px;
+}
+
+.ver-perfil-btn:hover {
+    background-color: rgba(210, 100, 90, 1);
 }
