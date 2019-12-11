@@ -1,0 +1,36 @@
+.contenedor {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #55B4B0;
+}
+
+.contenedor-login {
+  width: 50%;
+  height: 70%;
+  background-color: #f3f3f3;
+}
+
+.titulo-login {
+  text-align: center;
+  padding: 5%;
+}
+
+.pestana {
+  width: 50% !important;
+  height: 100% !important;
+}
+
+.pestana a {
+  height: 100%;
+  line-height: 48px;
+}
+
+.pestanasContainer {
+  height: 15%;
+}
+
+.caja-control-usuarios {
+  padding: 5%;
+}
