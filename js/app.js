@@ -9,3 +9,15 @@ cajasEvaluaciones.forEach(caja => {
         lista.classList.remove('lista-activa');
     })
 });
+
+const botonModal = document.getElementById('abrirModal')
+const ventanaModal = document.getElementById('perfil-modal');
+const cerrarModalBtn = document.getElementsByClassName('cerrarModalBtn')[0];
+
+botonModal.addEventListener('click', () => {
+    ventanaModal.style.display = 'block';
+})
+
+cerrarModalBtn.addEventListener('click', () => {
+    ventanaModal.style.display = 'none';
+})

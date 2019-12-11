@@ -169,3 +169,66 @@ body {
 .ver-perfil-btn:hover {
     background-color: rgba(210, 100, 90, 1);
 }
+
+.cerrarModalBtn {
+    color: #f2f2f2;
+    cursor: pointer;
+    background-color: rgba(230, 110, 98, 1);
+    padding: 8px 10px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #f2f2f2;
+    width: 70%;
+    margin: 10% auto;
+    -webkit-box-shadow: 6px 6px 9px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 6px 9px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 6px 9px -3px rgba(0, 0, 0, 0.75);
+    animation: modalAnimation 0.7s;
+}
+
+@keyframes modalAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-header, .modal-footer {
+    background-color: rgba(33, 69, 89, 1);
+    padding: 15px;
+    color: #f2f2f2
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-body h4 {
+    margin: 10px 0;
+}
