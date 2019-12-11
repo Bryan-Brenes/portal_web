@@ -1,4 +1,4 @@
-meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octurbre", "noviembre", "diciembre"]
+meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 lasemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
 diassemana = ["lun", "mar", "mié", "jue", "vie", "sáb", "dom"]
 
@@ -30,7 +30,7 @@ window.onload = function () {
 }
 
 function cabecera() {
-  tit.innerHTML = meses[mescal] + " de " + annocal;
+  tit.innerHTML = meses[mescal] + " " + annocal;
   mesant = mescal - 1;
   mespos = mescal + 1;
   if (mesant < 0) {
@@ -70,8 +70,9 @@ function escribirdias() {
       celda = fila.getElementsByTagName("td")[j]
       celda.innerHTML = midia;
 
-      celda.style.backgroundColor = "#9bf5ff";
-      celda.style.color = "#492736";
+      celda.style.backgroundColor = "rgba(0,0,0,0)";
+      celda.style.boxShadow = "none";
+      // celda.style.color = "#492736";
 
       if (j == 6) {
         celda.style.color = "#f11445";
@@ -82,7 +83,8 @@ function escribirdias() {
       }
 
       if (mimes == meshoy && midia == diahoy && mianno == annohoy) {
-        celda.style.backgroundColor = "#f0b1e9";
+        celda.style.backgroundColor = "#e66e62";
+        celda.style.boxShadow = "1px 1px 5px black";
         celda.innerHTML = "<cite title='Fecha Actual'>" + midia + "</cite>";
       }
 
@@ -143,3 +145,16 @@ function mifecha() {
 
 }
 
+const avatar = document.getElementsByClassName('avatar')[0];
+const flechas = document.getElementsByClassName('actionAvatar');
+
+for (let i = 0; i < flechas.length; i++) {
+  flechas[i].addEventListener('mouseenter', () => {
+    console.log('entro')
+    avatar.classList.add('mostrarAvatar');
+  })
+  flechas[i].addEventListener('mouseout', () => {
+    avatar.classList.remove('mostrarAvatar');
+    console.log('salio')
+  })
+}

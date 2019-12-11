@@ -1,3 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: conforta;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  src: url(../../fonts/conforta/Comfortaa-Regular.ttf);
+  font-family: conforta;
+}
+
 #anterior, #posterior, #fechaactual i {
   cursor: pointer;
+}
+
+.contendor-header {
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(230, 110, 98, 0.9); */
+  background-color: rgba(33, 69, 89, 0.9);
+  color: #f0f0f0;
+}
+
+.contenedor {
+  height: 89vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  color: #595959
+}
+
+.calendario h2 {
+  margin: 0 20px;
+  font-size: 32px;
+  width: 350px;
+  text-align: center;
+}
+
+.flecha-izq {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #595959;
+  transform: rotateZ(45deg);
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+}
+
+.flecha-der {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #595959;
+  transform: rotateZ(45deg);
+  border-bottom: none;
+  border-left: none;
+  cursor: pointer;
+}
+
+.flecha-der:hover, .flecha-izq:hover {
+  border-color: black;
+  width: 23px;
+  height: 23px;
+}
+
+#anterior, #posterior {
+  display: none;
+}
+
+#diasc th, #diasc td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: rgba(33, 69, 89, 0.8)!important;
+  color: #f2f2f2;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+#fechaactual {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#fechaactual i {
+  color: rgb(230, 110, 98);
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.buscarBtn {
+  background-color: rgb(230, 110, 98);
+  border: none;
+  padding: 1em 2em;
+  border-radius: 10px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.buscarBtn:hover {
+  background-color: rgb(210, 100, 88);
+}
+
+.anioInput {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(230, 110, 98, 0.6);
+  padding: 1em 2em;
+  text-align: center;
+}
+
+.selectMes {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(230, 110, 98, 0.6);
+  background-color: white;
+  padding: 1em 2em;
+}
+
+.avatar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  transform: translateX(110%);
+  transition: transform 0.5s;
+}
+
+.mostrarAvatar {
+  transform: translateX(0%);
 }
