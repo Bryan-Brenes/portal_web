@@ -1,36 +1,108 @@
+* {
+  color: #f0f0f0;
+}
+
+:root {
+  --radio-border: 35px;
+}
+
 .contenedor {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #55B4B0;
+  background: linear-gradient(to bottom, rgba(16, 79, 95, 0.6), rgba(16, 79, 95, 0.8));
 }
 
-.contenedor-login {
+.login-contenedor {
+  display: flex;
+  width: 70%;
+  max-width: 800px;
+  border-radius: var(--radio-border);
+  min-height: 20%;
+  height: 80%;
+  background-color: #2c3e50;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.panel-der {
+  border-top-right-radius: var(--radio-border);
+  border-bottom-right-radius: var(--radio-border);
   width: 50%;
-  height: 70%;
-  background-color: #f3f3f3;
-}
-
-.titulo-login {
-  text-align: center;
-  padding: 5%;
-}
-
-.pestana {
-  width: 50% !important;
-  height: 100% !important;
-}
-
-.pestana a {
   height: 100%;
-  line-height: 48px;
+  background-color: #2c3e50;
+  padding: 20px;
+  transition: all 0.5s ease;
 }
 
-.pestanasContainer {
-  height: 15%;
+.panel-izq {
+  border-top-left-radius: var(--radio-border);
+  border-bottom-left-radius: var(--radio-border);
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
 
-.caja-control-usuarios {
-  padding: 5%;
+.panel-izq img {
+  height: 100%;
+}
+
+.cambio-tipo-login {
+  text-align: right;
+}
+
+.btn-login, .btn-registro {
+  background-color: #5a6268;
+  color: #f2f2f2
+}
+
+.btn-login:hover, .btn-registro:hover {
+  color: #f2f2f2;
+}
+
+.btn-login:focus, .btn-registro:focus {
+  outline-color: #f2f2f2;
+}
+
+.btn-login.active, .btn-registro.active {
+  background-color: #0069d9;
+  color: #f2f2f2;
+}
+
+.grupo {
+  margin: 20px 10px;
+  padding: 5px;
+  backface-visibility: hidden;
+}
+
+.btn-ingresar {
+  margin-top: 40px;
+}
+
+.formularios {
+  position: relative;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.formulario-login {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.formulario-registro {
+  position: absolute;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  top: 0;
+  left: 0;
+}
+
+.formularios.active {
+  transform: rotateY(180deg);
 }

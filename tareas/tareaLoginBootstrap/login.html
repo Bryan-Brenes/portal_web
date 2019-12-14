@@ -14,63 +14,97 @@
 <body>
 
   <div class="contenedor">
-    <div class="contenedor-login">
-      <ul class="nav nav-tabs pestanasContainer" id="myTab" role="tablist">
-        <li class="nav-item pestana">
-          <a class="nav-link active text-center" id="home-tab" data-toggle="tab" href="#home" role="tab"
-            aria-controls="home" aria-selected="true">Inicio de sesión</a>
-        </li>
-        <li class="nav-item pestana">
-          <a class="nav-link text-center" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-            aria-controls="profile" aria-selected="false">Registro</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <!-- Contenido para inicio de sesión -->
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="container caja-control-usuarios">
+    <div class="login-contenedor">
+      <div class="panel-izq" id="panel-izq">
+        <img src="/img/winter_bg2.jpg" alt="imagen fondo de invierno">
+      </div>
+      <div class="panel-der" id="panel-der">
+        <div class="row cambio-tipo-login">
+          <div class="col-sm-12">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-login active">
+                <input type="radio" name="options" id="btn-login" checked> Iniciar sesión
+              </label>
+              <label class="btn btn-registro">
+                <input type="radio" name="options" id="btn-registro"> Registrarse
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="formularios row">
+          <div class="formulario-login col-sm-12">
+            <div class="row">
+              <div class="col-sm-12 grupo">
+                <h5>Inicio de sesión</h5>
+              </div>
+            </div>
             <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                  else.</small>
+                <label for="email-login">Correo electrónico</label>
+                <input type="email" class="form-control" placeholder="Correo electrónico" id="email-login"
+                  aria-describedby="emailHelp">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="password-login">Contraseña</label>
+                <input type="password" class="form-control" id="password-login" placeholder="Contraseña">
               </div>
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <button type="submit" class="btn btn-primary btn-block btn-ingresar">Ingresar</button>
+            </form>
+          </div>
+          <div class="formulario-registro col-sm-12">
+            <div class="row">
+              <div class="col-sm-12 grupo">
+                <h5>Registro</h5>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <form>
+              <div class="row">
+                <div class="form-group col-sm-4">
+                  <label for="nombreRegistro">Nombre</label>
+                  <input type="text" class="form-control" placeholder="Nombre" id="nombreRegistro"
+                    aria-describedby="emailHelp">
+                </div>
+                <div class="form-group col-sm-4">
+                  <label for="apellidoRegistro">Apellido</label>
+                  <input type="text" class="form-control" placeholder="Apellido" id="apellidoRegistro"
+                    aria-describedby="emailHelp">
+                </div>
+                <div class="form-group col-sm-4">
+                  <label for="fechaNacimiento">Fecha de nacimiento</label>
+                  <input type="date" class="form-control" id="fechaNacimiento" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="indentificacion">Indentificación para login</label>
+                  <input type="text" class="form-control" placeholder="Identificación" id="identificacion"
+                    aria-describedby="emailHelp">
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="contraseniaRegistro">Contraseña</label>
+                  <input type="password" class="form-control" placeholder="Contraseña" id="contraseniaRegistro"
+                    aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="correoRegistro">Correo electrónico</label>
+                  <input type="email" class="form-control" id="correoRegistro" placeholder="Correo electrónico">
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="telefono">Teléfono</label>
+                  <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block btn-ingresar">Registrarse</button>
             </form>
           </div>
         </div>
-        <!-- Fin de contenido inicio de sesión -->
-        <!-- Contenido para registro de usuarios -->
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class="container caja-control-usuarios">
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                  else.</small>
-              </div>
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </div>
-        <!-- Fin de contenido para registro de usuarios -->
       </div>
     </div>
   </div>
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -81,6 +115,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  <script src="./js/login.js"></script>
 </body>
 
 </html>
