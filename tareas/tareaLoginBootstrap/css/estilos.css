@@ -106,3 +106,7 @@
 .formularios.active {
   transform: rotateY(180deg);
 }
+
+.olvido-contrasenia {
+  text-align: right;
+}
