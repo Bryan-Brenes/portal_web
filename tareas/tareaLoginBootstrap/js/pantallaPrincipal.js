@@ -12,6 +12,10 @@ inputsCambioContrasenia[1].addEventListener('keyup', () => {
   $('#contraseniaNuevaError').collapse('hide');
 })
 
+inputsCambioContrasenia[2].addEventListener('keyup', () => {
+  $('#contraseniaNuevaError2').collapse('hide');
+})
+
 menuBtn.addEventListener('click', () => menuUsuario.classList.toggle('active'));
 
 function cambiarContrasenia() {
@@ -25,6 +29,11 @@ function cambiarContrasenia() {
 
   if (!re.test(inputsCambioContrasenia[1].value)) {
     $('#contraseniaNuevaError').collapse('show');
+    correcto = false;
+  }
+
+  if (inputsCambioContrasenia[1].value !== inputsCambioContrasenia[2].value) {
+    $('#contraseniaNuevaError2').collapse('show');
     correcto = false;
   }
 
