@@ -110,3 +110,87 @@
 .olvido-contrasenia {
   text-align: right;
 }
+
+.login-contenedor.contenedor-restablecer-contrasenia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100px;
+  height: 60%;
+  width: 40%;
+}
+
+.titulo {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.login-contenedor.contenedor-restablecer-contrasenia .row {
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.login-contenedor.contenedor-restablecer-contrasenia .form-group {
+  padding: 0;
+}
+
+.imagen-fondo {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/img/winter_bg3.jpg');
+  filter: blur(2px);
+  background-size: cover;
+}
+
+.input-formulario {
+  position: relative;
+}
+
+.input-formulario .mensaje-error {
+  position: absolute;
+  bottom: -42px;
+  display: block;
+  width: 100%;
+  padding: 5px 16px;
+  border-radius: 4px;
+  color: white !important;
+  background-color: #969fa8;
+  z-index: 3;
+  transform: scaleY(0);
+  transition: all 0.3s ease;
+}
+
+.input-formulario .mensaje-error-sin-flecha {
+  display: block;
+  width: 100%;
+  padding: 5px 16px;
+  border-radius: 4px;
+  color: white !important;
+  background-color: #969fa8;
+  z-index: 3;
+  transform: scaleY(0);
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.mensaje-error::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: -9px;
+  left: 9%;
+  transform: rotateZ(45deg);
+  z-index: 2;
+  background-color: #969fa8;
+  width: 18px;
+  height: 18px;
+}
+
+.label-formulario::after {
+  content: '*';
+}

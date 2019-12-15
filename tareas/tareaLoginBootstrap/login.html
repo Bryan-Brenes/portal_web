@@ -38,11 +38,16 @@
                 <h5>Inicio de sesión</h5>
               </div>
             </div>
-            <form>
-              <div class="form-group">
+            <div class="input-formulario">
+              <small id="correoError" class="form-text text-muted mensaje-error-sin-flecha">Verificar
+                credenciales</small>
+            </div>
+            <form action="/tareas/tareaLoginBootstrap/html/pantallaPrincipal.html">
+              <div class="form-group input-formulario">
                 <label for="email-login">Correo electrónico</label>
-                <input type="email" class="form-control" placeholder="Correo electrónico" id="email-login"
+                <input type="text" class="form-control" placeholder="Correo electrónico" id="email-login"
                   aria-describedby="emailHelp">
+
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
               </div>
               <div class="form-group">
@@ -50,9 +55,10 @@
                 <input type="password" class="form-control" id="password-login" placeholder="Contraseña">
               </div>
               <div class="olvido-contrasenia">
-                <a href="#" class="">¿Olvidó su contraseña?</a>
+                <a href="./html/restablecerContrasenia.html" class="">¿Olvidó su contraseña?</a>
               </div>
-              <button type="submit" class="btn btn-primary btn-block btn-ingresar">Ingresar</button>
+              <button id="ingresarBtn-login" onclick="validarLogin(event)" type="submit"
+                class="btn btn-primary btn-block btn-ingresar">Ingresar</button>
             </form>
           </div>
           <div class="formulario-registro col-sm-12">
@@ -61,46 +67,50 @@
                 <h5>Registro</h5>
               </div>
             </div>
-            <form>
+            <form action="/tareas/tareaLoginBootstrap/html/pantallaPrincipal.html">
               <div class="row">
                 <div class="form-group col-sm-4">
-                  <label for="nombreRegistro">Nombre</label>
-                  <input type="text" class="form-control" placeholder="Nombre" id="nombreRegistro"
+                  <label for="nombreRegistro" class="label-formulario">Nombre</label>
+                  <input type="text" class="form-control inputRegistro" placeholder="Nombre" id="nombreRegistro"
                     aria-describedby="emailHelp">
                 </div>
                 <div class="form-group col-sm-4">
-                  <label for="apellidoRegistro">Apellido</label>
-                  <input type="text" class="form-control" placeholder="Apellido" id="apellidoRegistro"
+                  <label for="apellidoRegistro" class="label-formulario">Apellido</label>
+                  <input type="text" class="form-control inputRegistro" placeholder="Apellido" id="apellidoRegistro"
                     aria-describedby="emailHelp">
                 </div>
                 <div class="form-group col-sm-4">
-                  <label for="fechaNacimiento">Fecha de nacimiento</label>
-                  <input type="date" class="form-control" id="fechaNacimiento" aria-describedby="emailHelp">
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-sm-6">
-                  <label for="indentificacion">Indentificación para login</label>
-                  <input type="text" class="form-control" placeholder="Identificación" id="identificacion"
-                    aria-describedby="emailHelp">
-                </div>
-                <div class="form-group col-sm-6">
-                  <label for="contraseniaRegistro">Contraseña</label>
-                  <input type="password" class="form-control" placeholder="Contraseña" id="contraseniaRegistro"
+                  <label for="fechaNacimiento" class="label-formulario">Fecha de nacimiento</label>
+                  <input type="date" class="form-control inputRegistro" id="fechaNacimiento"
                     aria-describedby="emailHelp">
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-sm-6">
-                  <label for="correoRegistro">Correo electrónico</label>
-                  <input type="email" class="form-control" id="correoRegistro" placeholder="Correo electrónico">
+                  <label for="indentificacion" class="label-formulario">Indentificación para login</label>
+                  <input type="text" class="form-control inputRegistro" placeholder="Identificación" id="identificacion"
+                    aria-describedby="emailHelp">
                 </div>
                 <div class="form-group col-sm-6">
-                  <label for="telefono">Teléfono</label>
-                  <input type="number" class="form-control" id="telefono" aria-describedby="emailHelp">
+                  <label for="contraseniaRegistro" class="label-formulario">Contraseña</label>
+                  <input type="password" class="form-control inputRegistro" placeholder="Contraseña"
+                    id="contraseniaRegistro" aria-describedby="emailHelp">
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary btn-block btn-ingresar">Registrarse</button>
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="correoRegistro" class="label-formulario">Correo electrónico</label>
+                  <input type="email" class="form-control inputRegistro" id="correoRegistro"
+                    placeholder="Correo electrónico">
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="telefono" class="label-formulario">Teléfono</label>
+                  <input type="number" placeholder="telefono" class="form-control inputRegistro" id="telefono"
+                    aria-describedby="emailHelp">
+                </div>
+              </div>
+              <button onclick="validarCamposRegistro(event)" type="submit"
+                class="btn btn-primary btn-block btn-ingresar">Registrarse</button>
             </form>
           </div>
         </div>
