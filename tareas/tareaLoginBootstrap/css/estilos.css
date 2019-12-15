@@ -206,11 +206,12 @@
   top: 70px;
   right: 5px;
   background-color: #343a40;
-  min-height: 300px;
+  min-height: 10px;
   max-width: 200px;
   min-width: 200px;
   padding: 20px 1px;
   display: none;
+  border-radius: 10px;
 }
 
 .nombreUsuario {
@@ -242,6 +243,15 @@
   text-align: center;
   padding: 8px;
   cursor: pointer;
+}
+
+.item-menu.salirBtn {
+  background-color: #dc3545aa;
+}
+
+.item-menu.salirBtn:hover {
+  background-color: #c82333ee;
+  color: white;
 }
 
 .item-menu:hover {
