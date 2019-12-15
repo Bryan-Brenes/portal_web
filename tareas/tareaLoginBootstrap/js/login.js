@@ -43,8 +43,6 @@ function validarLogin(ev) {
 const camposRegistro = document.getElementsByClassName('inputRegistro');
 const telefono = document.getElementById('telefono');
 
-console.log(camposRegistro);
-
 for (let i = 0; i < camposRegistro.length; i++) {
   const campo = camposRegistro[i];
   campo.addEventListener('change', () => campo.style.borderColor = 'white');
@@ -61,6 +59,13 @@ function validarCamposRegistro(ev) {
       campo.style.borderColor = "red";
       correcto = false;
     }
+  }
+
+  var re = (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
+  if (!re.test(contraseniaRegistro.value)) {
+    contraseniaRegistro.style.borderColor = "red";
+    passwordErrorMsj.style.transform = "scaleY(1)"
+    correcto = false;
   }
 
   if (!correcto) {
@@ -88,6 +93,13 @@ function validarCorreo(correo, elemento) {
   console.log('correo correcto!');
   return true;
 }
+
+const passwordErrorMsj = document.getElementById('passwordError');
+const contraseniaRegistro = document.getElementById('contraseniaRegistro');
+
+contraseniaRegistro.addEventListener('keyup', () => {
+  passwordErrorMsj.style.transform = "scaleY(0)";
+})
 
 function validarContrasenia(pass, elemento) {
   //var correo = correoRestablecer.value;
