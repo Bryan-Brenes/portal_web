@@ -194,3 +194,9 @@
 .label-formulario::after {
   content: '*';
 }
+
+.foto-perfil {
+  height: 30px;
+  margin-right: 4px;
+  border-radius: 50%;
+}
