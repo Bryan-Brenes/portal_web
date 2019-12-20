@@ -218,6 +218,10 @@
   cursor: pointer;
 }
 
+.nombreUsuario span {
+  text-transform: capitalize;
+}
+
 .menu-usuario.active {
   display: block;
 }
@@ -266,4 +270,12 @@
 
 .text-light {
   color: rgba(40, 40, 40, 1) !important;
+}
+
+.mensaje-alerta {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12vh;
+  z-index: 5;
 }

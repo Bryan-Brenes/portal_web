@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,62 +41,116 @@
                 <h5>Inicio de sesión</h5>
               </div>
             </div>
-            <div class="input-formulario">
+            <!-- <div class="input-formulario">
               <small id="correoError" class="form-text text-muted mensaje-error-sin-flecha">Verificar
                 credenciales</small>
+            </div> -->
+            <?php
+              if(isset($_GET['error'])){
+                $error = "";
+                if($_GET['error'] == 'camposVacios'){
+                  $error = "Se dejaron campo vacíos";
+                } elseif ($_GET['error'] == 'credenciales'){
+                  $error = "Credenciales incorrectas";
+                }
+            ?>
+              <div class="alert alert-info alert-dismissible fade show" role="alert">
+              <?php echo "$error"?>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <form action="/tareas/tareaLoginBootstrap/html/pantallaPrincipal.html">
+            <?php
+              }
+            ?>
+            
+            
+            <form action="/tareas/tareaLoginBootstrap/archivosPHP/validacionLogin.php" method="post">
               <div class="form-group input-formulario">
-                <label for="email-login">Correo electrónico</label>
-                <input type="text" class="form-control" placeholder="Correo electrónico" id="email-login"
-                  aria-describedby="emailHelp">
+                <label for="email-login">Correo electrónico o nombre de usuario</label>
+                <input type="text" name="email-login" class="form-control" placeholder="Correo electrónico o nombre de usuario" id="email-login"
+                  aria-describedby="emailHelp"
+                  value="<?php 
+                    if(isset($_SESSION['email-login'])){
+                      echo $_SESSION['email-login'];
+                    } else {
+                      echo "";
+                    }
+                  ?>">
 
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
               </div>
               <div class="form-group">
                 <label for="password-login">Contraseña</label>
-                <input type="password" class="form-control" id="password-login" placeholder="Contraseña">
+                <input type="password" name="password-login" class="form-control" id="password-login" placeholder="Contraseña">
               </div>
               <div class="olvido-contrasenia">
-                <a href="./html/restablecerContrasenia.html" class="">¿Olvidó su contraseña?</a>
+                <a href="./html/restablecerContrasenia.php" class="">¿Olvidó su contraseña?</a>
               </div>
-              <button id="ingresarBtn-login" onclick="validarLogin(event)" type="submit"
+              <button name="submit" id="ingresarBtn-login" type="submit"
                 class="btn btn-primary btn-block btn-ingresar">Ingresar</button>
+                <!-- onclick="validarLogin(event)"  -->
             </form>
           </div>
+
+          <!-- Formulario de registro -->
           <div class="formulario-registro col-sm-12">
             <div class="row">
               <div class="col-sm-12 grupo">
                 <h5>Registro</h5>
               </div>
             </div>
-            <form action="/tareas/tareaLoginBootstrap/html/pantallaPrincipal.html">
+            <form action="/tareas/tareaLoginBootstrap/archivosPHP/registroUsuario.php" method="post">
               <div class="row">
                 <div class="form-group col-sm-4">
                   <label for="nombreRegistro" class="label-formulario">Nombre</label>
-                  <input type="text" class="form-control inputRegistro" placeholder="Nombre" id="nombreRegistro"
-                    aria-describedby="emailHelp">
+                  <input name="nombre-registro" type="text" class="form-control inputRegistro" placeholder="Nombre" id="nombreRegistro"
+                    aria-describedby="emailHelp" value="<?php
+                      if(isset($_SESSION['nombre-registro'])){
+                        echo $_SESSION['nombre-registro'];
+                      } else {
+                        echo "";
+                      }
+                    ?>">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="apellidoRegistro" class="label-formulario">Apellido</label>
-                  <input type="text" class="form-control inputRegistro" placeholder="Apellido" id="apellidoRegistro"
-                    aria-describedby="emailHelp">
+                  <input name="apellidos-registro" type="text" class="form-control inputRegistro" placeholder="Apellido" id="apellidoRegistro"
+                    aria-describedby="emailHelp" value="<?php
+                      if(isset($_SESSION['apellidos-registro'])){
+                        echo $_SESSION['apellidos-registro'];
+                      } else {
+                        echo "";
+                      }
+                    ?>">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="fechaNacimiento" class="label-formulario">Fecha de nacimiento</label>
-                  <input type="date" class="form-control inputRegistro" id="fechaNacimiento"
-                    aria-describedby="emailHelp">
+                  <input name="fechaNacimiento-registro" type="date" class="form-control inputRegistro" id="fechaNacimiento"
+                    aria-describedby="emailHelp" value="<?php
+                      if(isset($_SESSION['fechaNacimiento-registro'])){
+                        echo $_SESSION['fechaNacimiento-registro'];
+                      } else {
+                        echo "";
+                      }
+                    ?>">
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label for="indentificacion" class="label-formulario">Indentificación para login</label>
-                  <input type="text" class="form-control inputRegistro" placeholder="Identificación" id="identificacion"
-                    aria-describedby="emailHelp">
+                  <input  name="nombreUsuario-registro" type="text" class="form-control inputRegistro" placeholder="Identificación" id="identificacion"
+                    aria-describedby="emailHelp" value="<?php
+                      if(isset($_SESSION['nombreUsuario-registro'])){
+                        echo $_SESSION['nombreUsuario-registro'];
+                      } else {
+                        echo "";
+                      }
+                    ?>">
                 </div>
                 <div class="form-group col-sm-6 input-formulario">
                   <label for="contraseniaRegistro" class="label-formulario">Contraseña</label>
-                  <input type="password" class="form-control inputRegistro" placeholder="Contraseña"
+                  <input  name="contrasena-registro" type="password" class="form-control inputRegistro" placeholder="Contraseña"
                     id="contraseniaRegistro" aria-describedby="emailHelp">
                   <small id="passwordError" class="form-text text-muted mensaje-error">Min. 8 caracteres con mayúsculas,
                     minúsculas y números</small>
@@ -102,16 +159,28 @@
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label for="correoRegistro" class="label-formulario">Correo electrónico</label>
-                  <input type="email" class="form-control inputRegistro" id="correoRegistro"
-                    placeholder="Correo electrónico">
+                  <input  name="email-registro" type="email" class="form-control inputRegistro" id="correoRegistro"
+                    placeholder="Correo electrónico" value="<?php 
+                      if(isset($_SESSION['email-registro'])){
+                        echo $_SESSION['email-registro'];
+                      } else {
+                        echo "";
+                      }
+                    ?>">
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="telefono" class="label-formulario">Teléfono</label>
-                  <input type="tel" pattern="[0-9]{4}-[0-9]{4}" placeholder="8888-8888"
-                    class="form-control inputRegistro" id="telefono" aria-describedby="emailHelp">
+                  <input name="telefono-registro" type="tel" pattern="[0-9]{4}-[0-9]{4}" placeholder="8888-8888"
+                    class="form-control inputRegistro" id="telefono" aria-describedby="emailHelp" value="<?php
+                      if(isset($_SESSION['telefono-registro'])){
+                        echo $_SESSION['telefono-registro'];
+                      } else {
+                        echo "";
+                      }
+                    ?>">
                 </div>
               </div>
-              <button onclick="validarCamposRegistro(event)" type="submit"
+              <button type="submit" name="submit-registro"
                 class="btn btn-primary btn-block btn-ingresar">Registrarse</button>
             </form>
           </div>
