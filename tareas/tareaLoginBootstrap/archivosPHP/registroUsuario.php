@@ -11,6 +11,13 @@
     $email = $_POST['email-registro'];
     $telefono = $_POST['telefono-registro'];
 
+    $_SESSION['nombre-registro'] = $nombre;
+    $_SESSION['apellidos-registro'] = $apellidos;
+    $_SESSION['fechaNacimiento-registro'] = $fechaNacimiento;
+    $_SESSION['nombreUsuario-registro'] = $nombreUsuario;
+    $_SESSION['email-registro'] = $email;
+    $_SESSION['telefono-registro'] = $telefono;
+
     // verificar que los campos obligatorios no esten vacíos
     if (empty($nombre) || empty($apellidos) || empty($fechaNacimiento) || empty($nombreUsuario) || empty($contrasena) || empty($email) || empty($telefono)){
       header("Location: ../login.php?msj=camposVacios");
@@ -19,12 +26,7 @@
 
     echo $fechaNacimiento;
 
-    $_SESSION['nombre-registro'] = $nombre;
-    $_SESSION['apellidos-registro'] = $apellidos;
-    $_SESSION['fechaNacimiento-registro'] = $fechaNacimiento;
-    $_SESSION['nombreUsuario-registro'] = $nombreUsuario;
-    $_SESSION['email-registro'] = $email;
-    $_SESSION['telefono-registro'] = $telefono;
+    
 
     $db = new Database();
 
@@ -52,6 +54,13 @@
     $_SESSION['fechaNacimiento'] = $fechaNacimiento;
     $_SESSION['nombreUsuario'] = $nombreUsuario;
     $_SESSION['contrasena'] = $contrasena;
+
+    $_SESSION['nombre-registro'] = "";
+    $_SESSION['apellidos-registro'] = "";
+    $_SESSION['fechaNacimiento-registro'] = "";
+    $_SESSION['nombreUsuario-registro'] = "";
+    $_SESSION['email-registro'] = "";
+    $_SESSION['telefono-registro'] = "";
 
     header("Location: ../html/pantallaPrincipal.php");
     exit();

@@ -1,5 +1,12 @@
 <?php 
   session_start();
+  /*$_SESSION['email'] = "";
+  $_SESSION['nombre'] = "";
+  $_SESSION['apellidos'] = "";
+  $_SESSION['telefono'] = "";
+  $_SESSION['fechaNacimiento'] = "";
+  $_SESSION['nombreUsuario'] = "";
+  $_SESSION['contrasena'] = "";*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +22,30 @@
 </head>
 
 <body>
+
+<?php 
+    if(isset($_GET['msj'])){
+      $mensaje = "";
+      if($_GET['msj'] == "camposVacios"){
+        $mensaje = "Por favor no dejar campos vacíos";
+      } elseif($_GET['msj'] == "emailExistente"){
+        $mensaje = "Email ya se encuentra registrado";
+      } elseif($_GET['msj'] == "contrasenaFormato"){
+        $mensaje = "La nueva contraseña debe tener al menos 8 caracteres con minúsculas, mayúsculas y números";
+      } elseif($_GET['msj'] == "identificadorExistente"){
+        $mensaje = "El identificador de usuario no esta disponible";
+      } 
+      ?>
+        <div class="alert alert-info alert-dismissible fade show mensaje-alerta" role="alert">
+          <?php echo $mensaje?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      <?php
+    }
+  ?>
 
   <div class="contenedor">
     <div class="login-contenedor">
