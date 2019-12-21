@@ -13,21 +13,51 @@
 
 <body>
 
+  <?php  
+    if(isset($_GET['status'])){
+      $mensaje = "";
+      $claseAlerta = "danger";
+      if ($_GET['status'] == 'error') {
+        $mensaje = "Hubo un error al enviar el correo por favor intentar de nuevo más tarde";
+      } elseif($_GET['status'] == 'enviado'){
+        $mensaje = "Si ha suministrado una cuenta válida, le llegará un correo con instrucciones para restablecer su contraseña";
+        $claseAlerta = "success";
+      }
+
+      ?>
+
+        <div class="alert alert-<?php echo $claseAlerta?> alert-dismissible fade show mensaje-alerta2" role="alert">
+          <?php echo $mensaje?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      <?php
+
+    }
+  ?>
+
   <div class="imagen-fondo"> </div>
   <div class="contenedor">
     <div class="login-contenedor contenedor-restablecer-contrasenia">
       <h3 class="titulo">Restablecer contraseña</h3>
       <div class="row">
-        <form action="#" class="row">
+        <form action="../archivosPHP/enviarCorreo.php" class="row" method="post">
           <div class="form-group col-sm-12 input-formulario">
             <label for="correoRestablecer">Correo electrónico de la cuenta</label>
-            <input type="text" class="form-control" id="correoRestablecer" placeholder="Correo electrónico"
+            <input type="text" name="email" class="form-control" id="correoRestablecer" placeholder="Correo electrónico"
               aria-describedby="emailHelp">
             <small id="correoError" class="form-text text-muted mensaje-error">Se debe ingresar un correo válido</small>
           </div>
-          <button onclick="validarCorreo()" id="restablecerBtn" type="submit"
-            class="btn btn-primary btn-block btn-ingresar">Enviar
-            solicitud</button>
+          <div class="col-sm-12">
+            
+            <button name="submit" id="restablecerBtn" type="submit"
+              class="btn btn-primary btn-block">Enviar
+              solicitud</button>
+
+            <a href="../login.php" class="btn btn-secondary btn-block">Volver</a>
+          </div>
         </form>
       </div>
     </div>

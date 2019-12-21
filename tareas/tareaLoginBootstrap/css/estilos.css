@@ -273,9 +273,17 @@
 }
 
 .mensaje-alerta {
-  position: absolute;
+  position: absolute !important;
   left: 50%;
   transform: translateX(-50%);
   top: 12vh;
+  z-index: 5;
+}
+
+.mensaje-alerta2 {
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2vh;
   z-index: 5;
 }
