@@ -61,4 +61,11 @@ rutas.forEach(ruta => {
 
 var polygon = L.polygon(listaRutas).addTo(mymap);
 
-console.log(rutas);
+var rutaLatLng = [];
+listaRutas.forEach(ruta => {
+  rutaLatLng.push(L.latLng(ruta[0], ruta[1]));
+})
+
+L.Routing.control({
+  waypoints: rutaLatLng
+}).addTo(mymap);
