@@ -1,11 +1,11 @@
-export default rutas = [
+[
   {
     "type": "Feature",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        9.856471,
-        -83.9279081
+        9.8567,
+        -83.9240
       ]
     },
     "properties": {
@@ -17,8 +17,8 @@ export default rutas = [
     "geometry": {
       "type": "Point",
       "coordinates": [
-        9.8583255,
-        -83.9195459
+        9.8585,
+        -83.9162
       ]
     },
     "properties": {
@@ -30,8 +30,8 @@ export default rutas = [
     "geometry": {
       "type": "Point",
       "coordinates": [
-        9.8560767,
-        -83.9197048
+        9.8617,
+        -83.9172
       ]
     },
     "properties": {
@@ -39,4 +39,3 @@ export default rutas = [
     }
   }
 ]
-
